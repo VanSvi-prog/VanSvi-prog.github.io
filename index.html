@@ -4,11 +4,15 @@
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Game</title>
+  <title>Verity Merge</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com"></script>
   <script>
-    vkBridge.send('VKWebAppInit');
+    window.addEventListener('load', function() {
+      if (typeof vkBridge !== 'undefined') {
+        vkBridge.send('VKWebAppInit');
+      }
+    });
   </script>
 </head>
 <body class="dark">
@@ -24,15 +28,15 @@
   </div>
   <script>
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+    var loaderUrl = buildUrl + "/Build_1.0_VK.loader.js";
     var config = {
-      dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
-      frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
-      codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+      dataUrl: buildUrl + "/Build_1.0_VK.data.br",
+      frameworkUrl: buildUrl + "/Build_1.0_VK.framework.js.br",
+      codeUrl: buildUrl + "/Build_1.0_VK.wasm.br",
       streamingAssetsUrl: "StreamingAssets",
-      companyName: "{{{ COMPANY_NAME }}}",
-      productName: "{{{ PRODUCT_NAME }}}",
-      productVersion: "{{{ PRODUCT_VERSION }}}",
+      companyName: "DefaultCompany",
+      productName: "Verity Merge",
+      productVersion: "1.0",
     };
 
     var container = document.querySelector("#unity-container");
@@ -60,3 +64,4 @@
   </script>
 </body>
 </html>
+
